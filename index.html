@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #111; /* full dark page */
+      background: #111;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,12 +16,11 @@
       margin: 0;
     }
     .clock-container {
-      background: #111; /* same as page */
-      /* Remove border, border-radius, box-shadow */
+      background: #111;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      padding: 2.2rem 2.2rem 2.2rem 2.2rem;
+      padding: 2.2rem;
       min-width: 500px;
     }
     .main-time {
@@ -30,29 +29,22 @@
       font-size: 7rem;
       letter-spacing: 0.12em;
       line-height: 1;
-      margin-right: 2.5rem;
-      min-width: 420px;
-      text-align: right;
+      text-align: center;
       font-weight: 900;
     }
-    .side-info {
+    .date-info {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       color: #37ff4f;
       font-family: 'Orbitron', monospace;
-      font-size: 1.35rem;
-      min-width: 120px;
-    }
-    .side-info .weekday {
-      font-size: 1.15rem;
-      margin-top: 0.8rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+      margin-top: 1.2rem;
       letter-spacing: 0.04em;
     }
-    .side-info .date-block {
+    .date-info .date-block {
       font-size: 1.2rem;
-      margin-top: 0.3rem;
+      margin-top: 0.2rem;
       letter-spacing: 0.02em;
     }
   </style>
@@ -60,7 +52,7 @@
 <body>
   <div class="clock-container">
     <div class="main-time" id="main-time">12:48:59</div>
-    <div class="side-info">
+    <div class="date-info">
       <div class="weekday" id="weekday">Friday</div>
       <div class="date-block" id="date">08.08.2025</div>
     </div>
