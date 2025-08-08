@@ -13,6 +13,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      min-height: 100vh;
       margin: 0;
     }
     .clock-container {
@@ -21,7 +22,10 @@
       flex-direction: column;
       align-items: center;
       padding: 2.2rem;
-      min-width: 500px;
+      min-width: 300px;
+      /* Remove hard min-width for better flexibility on small screens */
+      box-sizing: border-box;
+      border-radius: 1.2rem;
     }
     .main-time {
       font-family: 'Orbitron', monospace;
@@ -31,6 +35,8 @@
       line-height: 1;
       text-align: center;
       font-weight: 900;
+      transition: font-size 0.2s;
+      word-break: break-all;
     }
     .date-info {
       display: flex;
@@ -46,6 +52,54 @@
       font-size: 1.2rem;
       margin-top: 0.2rem;
       letter-spacing: 0.02em;
+    }
+
+    /* Responsive: Tablet screens */
+    @media (max-width: 800px) {
+      .clock-container {
+        padding: 1.2rem;
+        min-width: 180px;
+      }
+      .main-time {
+        font-size: 4rem;
+      }
+      .date-info {
+        font-size: 1.2rem;
+      }
+      .date-info .date-block {
+        font-size: 1rem;
+      }
+    }
+
+    /* Responsive: Phone screens */
+    @media (max-width: 480px) {
+      .clock-container {
+        padding: 0.7rem 0.2rem;
+        min-width: unset;
+        width: 98vw;
+        border-radius: 0.7rem;
+      }
+      .main-time {
+        font-size: 2.2rem;
+        letter-spacing: 0.07em;
+      }
+      .date-info {
+        font-size: 0.82rem;
+        margin-top: 0.7rem;
+      }
+      .date-info .date-block {
+        font-size: 0.7rem;
+      }
+    }
+
+    /* For extra small screens */
+    @media (max-width: 330px) {
+      .main-time {
+        font-size: 1.15rem;
+      }
+      .clock-container {
+        padding: 0.3rem 0.1rem;
+      }
     }
   </style>
 </head>
